@@ -220,7 +220,7 @@ html, body {
     color: #f9fafb;
 }
 
-/* EXERCISE CARDS - COLLAPSIBLE */
+/* EXERCISE CARDS */
 .exercise-card {
     background: #1a212b;
     border: 1px solid #1f2937;
@@ -1036,7 +1036,7 @@ const INITIAL_DATA = {
     dataVersion: DATA_VERSION
 };
 
-let firebase, auth, db;
+let auth, db;
 let currentUser = null;
 let data = JSON.parse(JSON.stringify(INITIAL_DATA));
 
@@ -1048,14 +1048,9 @@ let lastLoggedSetId = null;
 let expandedExerciseId = null;
 let syncInProgress = false;
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-auth = firebase.auth;
-db = firebase.firestore();
-
 function initFirebase() {
     firebase.initializeApp(firebaseConfig);
-    auth = firebase.auth;
+    auth = firebase.auth();
     db = firebase.firestore();
     
     auth.onAuthStateChanged(user => {
@@ -1074,6 +1069,9 @@ function initFirebase() {
             document.getElementById('bottomNav').style.display = 'none';
         }
     });
+    
+    document.getElementById('googleSignInBtn').addEventListener('click', signInWithGoogle);
+    document.getElementById('logoutBtn').addEventListener('click', signOut);
 }
 
 function signInWithGoogle() {
@@ -1093,11 +1091,12 @@ function loadRemoteData(userId) {
     docRef.onSnapshot(snapshot => {
         if (snapshot.exists) {
             const remoteData = snapshot.data();
-            if (remoteData.dataVersion === DATA_VERSION) {
+            if (remoteData && remoteData.dataVersion === DATA_VERSION) {
                 data = remoteData;
-                console.log('Loaded data from Firebase');
                 updateUI();
             }
+        } else {
+            setSyncStatus('synced');
         }
     }, err => {
         console.error('Firebase load error:', err);
@@ -1191,8 +1190,6 @@ function setupUI() {
         if (e.target.files[0]) importData(e.target.files[0]);
     });
     document.getElementById('undoBtn').addEventListener('click', undoLastSet);
-    document.getElementById('googleSignInBtn').addEventListener('click', signInWithGoogle);
-    document.getElementById('logoutBtn').addEventListener('click', signOut);
     
     updateUI();
 }
