@@ -1218,7 +1218,9 @@ Otherwise, just give normal coaching advice. Be friendly, brief (2-3 sentences),
         document.getElementById('loadingMsg')?.remove();
         
         if (!response.ok) {
-            data.chatHistory.push({ role: 'assistant', content: 'Sorry, I had trouble connecting. Check your API key in Settings.' });
+            const errorText = await response.text();
+            console.error('API Error:', response.status, errorText);
+            data.chatHistory.push({ role: 'assistant', content: 'API Error (' + response.status + '): ' + errorText });
             renderChatHistory();
             sendBtn.disabled = false;
             return;
