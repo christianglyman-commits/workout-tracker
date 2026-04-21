@@ -22,39 +22,6 @@ html, body {
 
 .container { max-width: 500px; margin: 0 auto; padding: 16px; padding-bottom: 90px; }
 
-.auth-screen {
-    position: fixed;
-    inset: 0;
-    background: #0f1419;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 200;
-    padding: 20px;
-}
-.auth-screen.hidden { display: none; }
-.auth-logo { font-size: 48px; margin-bottom: 16px; }
-.auth-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #f9fafb; }
-.auth-subtitle { font-size: 14px; color: #6b7280; text-align: center; margin-bottom: 32px; }
-.google-btn {
-    background: #fff;
-    color: #1f2937;
-    border: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: inherit;
-    min-height: 48px;
-}
-.google-btn:active { transform: scale(0.98); opacity: 0.9; }
-.google-btn img { width: 20px; height: 20px; }
-
 .header { 
     margin-bottom: 20px; 
     padding-bottom: 16px; 
@@ -68,83 +35,30 @@ html, body {
 .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .sync-status { font-size: 10px; color: #6b7280; font-weight: 600; text-transform: uppercase; }
 .sync-status.synced { color: #00e676; }
-.user-email { font-size: 11px; color: #6b7280; }
-.logout-btn { font-size: 11px; color: #ef4444; background: none; border: none; cursor: pointer; padding: 0; font-weight: 600; margin-top: 4px; }
 
 .stats-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 20px; }
 .stat-box { background: #1a212b; border: 1px solid #1f2937; border-radius: 8px; padding: 14px 10px; text-align: center; }
 .stat-number { font-size: 22px; font-weight: 700; color: #00e676; line-height: 1; }
 .stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-top: 4px; }
 
-.workout-progress {
-    background: #1a212b;
-    border: 1px solid #1f2937;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+.workout-progress { background: #1a212b; border: 1px solid #1f2937; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
 .workout-progress-text { font-size: 13px; color: #9ca3af; font-weight: 600; white-space: nowrap; }
 .progress-bar { flex: 1; height: 6px; background: #0f1419; border-radius: 3px; overflow: hidden; }
 .progress-bar-fill { height: 100%; background: #00e676; border-radius: 3px; transition: width 0.4s ease-out; }
 
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #1a212b;
-    border-top: 1px solid #1f2937;
-    padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
-    z-index: 50;
-    display: flex;
-    justify-content: space-around;
-    max-width: 500px;
-    margin: 0 auto;
-}
-.nav-btn {
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: #6b7280;
-    cursor: pointer;
-    padding: 6px 4px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 10px;
-    font-family: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-}
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #1a212b; border-top: 1px solid #1f2937; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); z-index: 50; display: flex; justify-content: space-around; max-width: 500px; margin: 0 auto; }
+.nav-btn { flex: 1; border: none; background: transparent; color: #6b7280; cursor: pointer; padding: 6px 4px; border-radius: 8px; font-weight: 600; font-size: 10px; font-family: inherit; display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .nav-btn svg { width: 20px; height: 20px; }
 .nav-btn.active { color: #00e676; }
 
 .tab-content { display: none; }
 .tab-content.active { display: block; }
-
 .section { margin-bottom: 20px; }
 .section-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; color: #f9fafb; }
 
-.exercise-card {
-    background: #1a212b;
-    border: 1px solid #1f2937;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
+.exercise-card { background: #1a212b; border: 1px solid #1f2937; border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
 .exercise-card.done { opacity: 0.55; border-left: 3px solid #00e676; }
-.exercise-card-compact {
-    padding: 14px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    gap: 12px;
-}
+.exercise-card-compact { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 12px; }
 .exercise-card-compact-info { flex: 1; min-width: 0; }
 .exercise-card-compact-name { font-weight: 600; font-size: 15px; color: #f9fafb; margin-bottom: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .exercise-card-compact-meta { font-size: 12px; color: #00e676; font-weight: 600; }
@@ -152,7 +66,6 @@ html, body {
 .exercise-num { font-size: 11px; color: #6b7280; font-weight: 700; background: #0f1419; padding: 4px 8px; border-radius: 6px; border: 1px solid #1f2937; }
 .expand-icon { color: #6b7280; font-size: 12px; transition: transform 0.2s; }
 .exercise-card.expanded .expand-icon { transform: rotate(180deg); color: #00e676; }
-
 .exercise-card-details { display: none; padding: 0 16px 16px 16px; border-top: 1px solid #1f2937; }
 .exercise-card.expanded .exercise-card-details { display: block; }
 .exercise-card-details-inner { padding-top: 14px; }
@@ -168,22 +81,7 @@ html, body {
 .btn-ghost { background: transparent; color: #9ca3af; padding: 9px 14px; font-size: 13px; border-radius: 6px; border: 1px solid #1f2937; }
 .ai-badge { background: #00e676; color: #0f1419; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 6px; }
 
-.rest-timer {
-    position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #00e676;
-    color: #0f1419;
-    padding: 14px 24px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 24px;
-    z-index: 100;
-    display: none;
-    min-width: 180px;
-    text-align: center;
-}
+.rest-timer { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); background: #00e676; color: #0f1419; padding: 14px 24px; border-radius: 10px; font-weight: 700; font-size: 24px; z-index: 100; display: none; min-width: 180px; text-align: center; }
 .rest-timer.active { display: block; }
 .rest-timer-label { font-size: 11px; margin-bottom: 4px; font-weight: 600; opacity: 0.8; }
 .rest-timer-skip { background: rgba(15,20,25,0.1); border: 1px solid rgba(15,20,25,0.2); color: #0f1419; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-top: 6px; cursor: pointer; font-family: inherit; }
@@ -223,7 +121,7 @@ html, body {
 .settings-title { font-weight: 700; font-size: 14px; margin-bottom: 10px; color: #f9fafb; }
 .settings-help { font-size: 12px; color: #6b7280; margin-top: 4px; }
 label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; color: #9ca3af; }
-input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #1f2937; border-radius: 6px; font-size: 14px; font-family: inherit; background: #0f1419; color: #f9fafb; }
+input, select { width: 100%; padding: 10px 12px; border: 1px solid #1f2937; border-radius: 6px; font-size: 14px; font-family: inherit; background: #0f1419; color: #f9fafb; }
 
 .toggle { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
 .toggle-switch { position: relative; width: 44px; height: 24px; background: #1f2937; border-radius: 12px; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
@@ -269,165 +167,41 @@ input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #1f
 @keyframes prFlash { 0% { opacity: 0; transform: scale(0.5); } 20% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.2); } }
 .pr-text { font-size: 60px; font-weight: 800; color: #00e676; text-align: center; line-height: 0.9; }
 .pr-text .small { font-size: 16px; display: block; color: #f9fafb; margin-bottom: 4px; font-weight: 600; letter-spacing: 4px; }
-
 .confetti-piece { position: fixed; width: 8px; height: 8px; background: #00e676; z-index: 999; pointer-events: none; }
 
 .chat-container { display: flex; flex-direction: column; height: calc(100vh - 160px); }
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px 0;
-    margin-bottom: 16px;
-}
-.chat-message {
-    margin-bottom: 16px;
-    display: flex;
-    gap: 10px;
-}
+.chat-messages { flex: 1; overflow-y: auto; padding: 16px 0; margin-bottom: 16px; }
+.chat-message { margin-bottom: 16px; display: flex; gap: 10px; }
 .chat-message.user { flex-direction: row-reverse; }
-.chat-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #1f2937;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-}
-.chat-bubble {
-    background: #1a212b;
-    border: 1px solid #1f2937;
-    border-radius: 12px;
-    padding: 12px 14px;
-    max-width: 75%;
-    font-size: 14px;
-    line-height: 1.5;
-}
-.chat-message.user .chat-bubble {
-    background: #00e676;
-    color: #0f1419;
-    border-color: #00e676;
-}
-.chat-message.assistant .chat-bubble {
-    color: #e5e7eb;
-}
-.chat-input-area {
-    background: #1a212b;
-    border: 1px solid #1f2937;
-    border-radius: 10px;
-    padding: 12px;
-}
-.suggested-prompts {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 10px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-}
+.chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: #1f2937; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.chat-bubble { background: #1a212b; border: 1px solid #1f2937; border-radius: 12px; padding: 12px 14px; max-width: 75%; font-size: 14px; line-height: 1.5; }
+.chat-message.user .chat-bubble { background: #00e676; color: #0f1419; border-color: #00e676; }
+.chat-message.assistant .chat-bubble { color: #e5e7eb; }
+.chat-input-area { background: #1a212b; border: 1px solid #1f2937; border-radius: 10px; padding: 12px; }
+.suggested-prompts { display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; padding-bottom: 4px; }
 .suggested-prompts::-webkit-scrollbar { display: none; }
-.prompt-btn {
-    background: #0f1419;
-    border: 1px solid #1f2937;
-    color: #00e676;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    font-family: inherit;
-}
+.prompt-btn { background: #0f1419; border: 1px solid #1f2937; color: #00e676; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; font-family: inherit; }
 .prompt-btn:active { background: #1f2937; }
-.chat-input-row {
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-}
-.chat-input {
-    flex: 1;
-    background: #0f1419;
-    border: 1px solid #1f2937;
-    color: #f9fafb;
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: inherit;
-    resize: none;
-    min-height: 42px;
-    max-height: 120px;
-}
-.chat-send-btn {
-    background: #00e676;
-    color: #0f1419;
-    border: none;
-    width: 42px;
-    height: 42px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    flex-shrink: 0;
-}
+.chat-input-row { display: flex; gap: 8px; align-items: flex-end; }
+.chat-input { flex: 1; background: #0f1419; border: 1px solid #1f2937; color: #f9fafb; padding: 10px 12px; border-radius: 8px; font-size: 14px; font-family: inherit; resize: none; min-height: 42px; max-height: 120px; }
+.chat-send-btn { background: #00e676; color: #0f1419; border: none; width: 42px; height: 42px; border-radius: 8px; font-size: 18px; font-weight: 700; cursor: pointer; flex-shrink: 0; }
 .chat-send-btn:active { transform: scale(0.95); }
 .chat-send-btn:disabled { background: #1f2937; color: #6b7280; }
 
-.confirmation-card {
-    background: #1a212b;
-    border: 1px solid #00e676;
-    border-radius: 10px;
-    padding: 14px;
-    margin-top: 12px;
-}
-.confirmation-title {
-    font-weight: 700;
-    font-size: 14px;
-    color: #00e676;
-    margin-bottom: 8px;
-}
-.confirmation-changes {
-    background: #0f1419;
-    border: 1px solid #1f2937;
-    border-radius: 6px;
-    padding: 10px 12px;
-    margin-bottom: 12px;
-    font-size: 13px;
-    color: #e5e7eb;
-}
-.confirmation-actions {
-    display: flex;
-    gap: 8px;
-}
-.confirmation-actions button {
-    flex: 1;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    font-family: inherit;
-}
+.confirmation-card { background: #1a212b; border: 1px solid #00e676; border-radius: 10px; padding: 14px; margin-top: 12px; }
+.confirmation-title { font-weight: 700; font-size: 14px; color: #00e676; margin-bottom: 8px; }
+.confirmation-changes { background: #0f1419; border: 1px solid #1f2937; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; font-size: 13px; color: #e5e7eb; }
+.confirmation-actions { display: flex; gap: 8px; }
+.confirmation-actions button { flex: 1; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; font-family: inherit; }
 .confirm-yes { background: #00e676; color: #0f1419; border: none; }
 .confirm-no { background: transparent; color: #9ca3af; border: 1px solid #1f2937; }
 </style>
 </head>
 <body>
 
-<div class="auth-screen" id="authScreen">
-<div class="auth-logo">💪</div>
-<div class="auth-title">Workout Tracker</div>
-<div class="auth-subtitle">Sign in to sync your data</div>
-<button class="google-btn" id="googleSignInBtn">
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E" alt="Google">
-Sign in with Google
-</button>
-<div id="authStatus" style="margin-top: 16px; font-size: 12px; color: #6b7280;"></div>
-</div>
-
 <div class="save-indicator" id="saveIndicator">✓ Synced</div>
 
-<div class="container" id="mainContainer" style="display: none;">
+<div class="container">
 
 <div class="header">
 <div class="header-left">
@@ -435,9 +209,7 @@ Sign in with Google
 <div class="header-sub" id="headerDate"></div>
 </div>
 <div class="header-right">
-<div class="sync-status" id="syncStatus">Ready</div>
-<div class="user-email" id="userEmail"></div>
-<button class="logout-btn" id="logoutBtn">Sign out</button>
+<div class="sync-status" id="syncStatus">Connecting...</div>
 </div>
 </div>
 
@@ -487,7 +259,7 @@ Sign in with Google
 <button class="prompt-btn" onclick="quickPrompt('Shorten my workout')">⚡ Shorten workout</button>
 <button class="prompt-btn" onclick="quickPrompt('What else should I do?')">💪 What else?</button>
 <button class="prompt-btn" onclick="quickPrompt('Adjust for low energy')">🔋 Low energy</button>
-<button class="prompt-btn" onclick="quickPrompt('Form tips for my exercises')">📋 Form tips</button>
+<button class="prompt-btn" onclick="quickPrompt('Form tips')">📋 Form tips</button>
 </div>
 <div class="chat-input-row">
 <textarea class="chat-input" id="chatInput" placeholder="Ask your coach..." rows="1"></textarea>
@@ -607,11 +379,9 @@ Sign in with Google
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script type="module">
-// Firebase REST API config
+<script>
 const FIREBASE_CONFIG = {
     apiKey: "AIzaSyCpVHt-b1eSz4azwygd66apdTCl5ZBuE3o",
-    authDomain: "workout-tracker-e5e05.firebaseapp.com",
     databaseURL: "https://workout-tracker-e5e05-default-rtdb.firebaseio.com",
     projectId: "workout-tracker-e5e05"
 };
@@ -638,8 +408,7 @@ const INITIAL_DATA = {
     dataVersion: DATA_VERSION
 };
 
-let currentUser = null;
-let userToken = null;
+let currentUserId = null;
 let data = JSON.parse(JSON.stringify(INITIAL_DATA));
 let expandedDay = null, progressChart = null, restTimerInterval = null;
 let activeLogSession = null, lastLoggedSetId = null, expandedExerciseId = null;
@@ -647,90 +416,73 @@ let currentExerciseList = [];
 let pendingWorkoutChanges = null;
 let syncInProgress = false;
 
-// Initialize Firebase Auth with Google
-async function initFirebaseAuth() {
-    document.getElementById('authStatus').textContent = 'Checking auth...';
+async function initFirebase() {
+    setSyncStatus('connecting');
     
-    // Check if we have a stored token
-    const stored = localStorage.getItem('firebaseToken');
-    if (stored) {
-        const tokenData = JSON.parse(stored);
-        if (tokenData.expiresAt > Date.now()) {
-            userToken = tokenData.idToken;
-            currentUser = { uid: tokenData.uid, email: tokenData.email };
-            showMainApp();
-            await loadFirebaseData();
+    // Check if we have a stored user ID
+    let userId = localStorage.getItem('firebaseUserId');
+    
+    if (!userId) {
+        // Create anonymous user via Firebase REST API
+        try {
+            const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_CONFIG.apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ returnSecureToken: true })
+            });
+            
+            if (!response.ok) {
+                console.error('Failed to create anonymous user');
+                setSyncStatus('offline');
+                return;
+            }
+            
+            const result = await response.json();
+            userId = result.localId;
+            localStorage.setItem('firebaseUserId', userId);
+            localStorage.setItem('firebaseToken', result.idToken);
+            localStorage.setItem('firebaseRefreshToken', result.refreshToken);
+            console.log('Created anonymous user:', userId);
+        } catch (err) {
+            console.error('Firebase init error:', err);
+            setSyncStatus('offline');
             return;
         }
     }
     
-    // Show sign-in screen
-    document.getElementById('authStatus').textContent = 'Tap to sign in';
-}
-
-window.doGoogleSignIn = async function() {
-    document.getElementById('authStatus').textContent = 'Opening Google sign-in...';
-    
-    // Use Firebase Identity Toolkit REST API for sign-in
-    const provider = 'google.com';
-    const continueUrl = window.location.href;
-    
-    // Build OAuth URL
-    const authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp?key=${FIREBASE_CONFIG.apiKey}`;
-    
-    // For mobile, we'll use a simpler approach: redirect to Google OAuth
-    const googleAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' +
-        'client_id=579505805015-YOURCLIENTID.apps.googleusercontent.com&' +
-        'redirect_uri=' + encodeURIComponent(continueUrl) + '&' +
-        'response_type=token&' +
-        'scope=email%20profile';
-    
-    // Actually, let's use Firebase's hosted UI instead
-    window.location.href = `https://${FIREBASE_CONFIG.authDomain}/__/auth/handler?apiKey=${FIREBASE_CONFIG.apiKey}&appName=[DEFAULT]&authType=signInViaRedirect&redirectUrl=${encodeURIComponent(continueUrl)}&v=10.7.0&providerId=google.com`;
-};
-
-function showMainApp() {
-    document.getElementById('authScreen').classList.add('hidden');
-    document.getElementById('mainContainer').style.display = 'block';
-    if (currentUser) {
-        document.getElementById('userEmail').textContent = currentUser.email;
-    }
+    currentUserId = userId;
+    await loadFirebaseData();
     setupUI();
 }
 
-window.doSignOut = function() {
-    localStorage.removeItem('firebaseToken');
-    currentUser = null;
-    userToken = null;
-    location.reload();
-};
-
 async function loadFirebaseData() {
-    if (!currentUser || !userToken) return;
+    if (!currentUserId) return;
     
     try {
-        const response = await fetch(`${FIREBASE_CONFIG.databaseURL}/users/${currentUser.uid}.json?auth=${userToken}`);
+        const response = await fetch(`${FIREBASE_CONFIG.databaseURL}/users/${currentUserId}.json`);
         if (response.ok) {
             const remoteData = await response.json();
             if (remoteData && remoteData.dataVersion === DATA_VERSION) {
                 data = remoteData;
-                updateUI();
+                console.log('Loaded data from Firebase');
             }
         }
         setSyncStatus('synced');
+        updateUI();
     } catch (err) {
         console.error('Load error:', err);
         setSyncStatus('offline');
+        updateUI();
     }
 }
 
 async function saveFirebaseData() {
-    if (!currentUser || !userToken || syncInProgress) return;
+    if (!currentUserId || syncInProgress) return;
     syncInProgress = true;
     setSyncStatus('syncing');
     
     try {
-        const response = await fetch(`${FIREBASE_CONFIG.databaseURL}/users/${currentUser.uid}.json?auth=${userToken}`, {
+        const response = await fetch(`${FIREBASE_CONFIG.databaseURL}/users/${currentUserId}.json`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...data, lastSyncAt: new Date().toISOString() })
@@ -751,7 +503,10 @@ async function saveFirebaseData() {
 
 function setSyncStatus(status) {
     const statusEl = document.getElementById('syncStatus');
-    if (status === 'syncing') {
+    if (status === 'connecting') {
+        statusEl.textContent = 'Connecting...';
+        statusEl.classList.remove('synced');
+    } else if (status === 'syncing') {
         statusEl.textContent = 'Syncing...';
         statusEl.classList.remove('synced');
     } else if (status === 'synced') {
@@ -771,15 +526,15 @@ function setSyncStatus(status) {
 function isCardio(exercise) { return exercise.muscle === 'Cardio'; }
 
 function updateUI() {
-    window.updateTopStats();
-    window.displayTodayWorkout();
-    window.displaySchedule();
-    window.displayExercises();
+    updateTopStats();
+    displayTodayWorkout();
+    displaySchedule();
+    displayExercises();
 }
 
 function setupUI() {
     const today = new Date();
-    document.getElementById('greeting').textContent = window.getGreeting();
+    document.getElementById('greeting').textContent = getGreeting();
     document.getElementById('headerDate').textContent = today.toLocaleDateString('en-US', { weekday: 'long' }) + ' · ' + today.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     
     document.getElementById('goalSelect').value = data.settings.goal;
@@ -790,7 +545,7 @@ function setupUI() {
     if (data.settings.restEnabled) document.getElementById('restToggle').classList.add('on');
     
     updateUI();
-    window.renderChatHistory();
+    renderChatHistory();
     
     const chatInput = document.getElementById('chatInput');
     chatInput.addEventListener('input', function() {
@@ -801,30 +556,28 @@ function setupUI() {
     chatInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
-            window.sendMessage();
+            sendMessage();
         }
     });
-    
-    document.getElementById('logoutBtn').addEventListener('click', window.doSignOut);
 }
 
-window.getGreeting = function() {
+function getGreeting() {
     const hour = new Date().getHours();
     if (hour < 12) return 'Good morning';
     if (hour < 17) return 'Good afternoon';
     if (hour < 21) return 'Good evening';
     return 'Late night grind';
-};
+}
 
-window.switchTab = function(tab, btn) {
+function switchTab(tab, btn) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
     document.getElementById(tab).classList.add('active');
     btn.classList.add('active');
-    if (tab === 'progress') window.setupProgressTab();
-};
+    if (tab === 'progress') setupProgressTab();
+}
 
-window.saveSettings = function() {
+function saveSettings() {
     data.settings.goal = document.getElementById('goalSelect').value;
     data.settings.experience = document.getElementById('experienceSelect').value;
     data.settings.apiKey = document.getElementById('apiKey').value.trim();
@@ -832,20 +585,20 @@ window.saveSettings = function() {
     data.settings.restEnabled = document.getElementById('restToggle').classList.contains('on');
     data.settings.restTime = parseInt(document.getElementById('restTime').value) || 90;
     saveFirebaseData();
-    window.displayTodayWorkout();
-};
+    displayTodayWorkout();
+}
 
-window.updateTopStats = function() {
-    const streak = window.calculateStreak();
+function updateTopStats() {
+    const streak = calculateStreak();
     document.getElementById('statStreak').textContent = streak;
     const uniqueDays = new Set(data.workouts.map(w => w.loggedAt ? w.loggedAt.split('T')[0] : '').filter(d => d));
     document.getElementById('statWorkouts').textContent = uniqueDays.size;
     let totalVolume = 0;
     data.workouts.forEach(w => { if (!w.isCardio && w.weight && w.reps) totalVolume += w.weight * w.reps * (w.sets || 1); });
     document.getElementById('statVolume').textContent = Math.round(totalVolume / 1000).toLocaleString();
-};
+}
 
-window.calculateStreak = function() {
+function calculateStreak() {
     const uniqueDays = [...new Set(data.workouts.map(w => w.loggedAt ? w.loggedAt.split('T')[0] : ''))].filter(d => d).sort().reverse();
     if (uniqueDays.length === 0) return 0;
     const today = new Date().toISOString().split('T')[0];
@@ -858,17 +611,17 @@ window.calculateStreak = function() {
         else break;
     }
     return streak;
-};
+}
 
-window.showHypeScreen = function() {
+function showHypeScreen() {
     const today = DAYS[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1];
     const todaySchedule = data.schedule.filter(s => s.day === today);
     const quote = HYPE_QUOTES[Math.floor(Math.random() * HYPE_QUOTES.length)];
     let todayMsg = todaySchedule.length > 0 ? "Today's focus: " + todaySchedule.map(s => s.muscle).join(' · ') : "No plan set. Configure in Settings.";
     document.getElementById('hypeScreen').innerHTML = '<div class="hype-screen"><div class="hype-quote">"' + quote.text + '"</div><div class="hype-today">' + todayMsg + '</div></div>';
-};
+}
 
-window.getRulesBasedSuggestion = function(exercise) {
+function getRulesBasedSuggestion(exercise) {
     const goal = data.settings.goal;
     const experience = data.settings.experience;
     const history = data.workouts.filter(w => w.exerciseId == exercise.id).slice(-5);
@@ -887,9 +640,9 @@ window.getRulesBasedSuggestion = function(exercise) {
         else if (lastRIR === 0) { reasoning = 'You were maxed out. Stay here.'; }
     }
     return { sets: targetSets, reps: targetReps, weight: suggestedWeight, reasoning, source: 'rules' };
-};
+}
 
-window.getAISuggestions = async function(exercises) {
+async function getAISuggestions(exercises) {
     if (!data.settings.apiKey) return null;
     const exerciseContext = exercises.map(ex => {
         const history = data.workouts.filter(w => w.exerciseId == ex.id).slice(-8);
@@ -907,16 +660,16 @@ window.getAISuggestions = async function(exercises) {
         const text = result.content[0].text.trim().replace(/^\`\`\`json\s*/i, '').replace(/^\`\`\`\s*/i, '').replace(/\s*\`\`\`$/i, '');
         return JSON.parse(text);
     } catch (e) { console.error(e); return null; }
-};
+}
 
-window.updateWorkoutProgress = function(exercises) {
+function updateWorkoutProgress(exercises) {
     const done = exercises.filter(ex => { const c = document.getElementById('exCard-' + ex.id); return c && c.classList.contains('done'); }).length;
     const pct = exercises.length > 0 ? (done / exercises.length) * 100 : 0;
     document.getElementById('workoutProgress').innerHTML = '<div class="workout-progress"><div class="workout-progress-text">' + done + ' / ' + exercises.length + ' done</div><div class="progress-bar"><div class="progress-bar-fill" style="width: ' + pct + '%"></div></div></div>';
-};
+}
 
-window.displayTodayWorkout = async function() {
-    window.showHypeScreen();
+async function displayTodayWorkout() {
+    showHypeScreen();
     const today = DAYS[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1];
     const todaySchedule = data.schedule.filter(s => s.day === today);
     const exercisesEl = document.getElementById('todayExercises');
@@ -939,26 +692,26 @@ window.displayTodayWorkout = async function() {
     }
     
     const rulesSuggestions = {};
-    todayExercises.forEach(ex => { rulesSuggestions[ex.id] = window.getRulesBasedSuggestion(ex); });
-    window.renderExerciseList(todayExercises, rulesSuggestions);
-    window.updateWorkoutProgress(todayExercises);
+    todayExercises.forEach(ex => { rulesSuggestions[ex.id] = getRulesBasedSuggestion(ex); });
+    renderExerciseList(todayExercises, rulesSuggestions);
+    updateWorkoutProgress(todayExercises);
     
     if (data.settings.aiEnabled && data.settings.apiKey) {
         exercisesEl.insertAdjacentHTML('afterbegin', '<div id="aiLoading" class="ai-loading"><span class="loading-spinner"></span>AI analyzing...</div>');
-        const aiResults = await window.getAISuggestions(todayExercises);
+        const aiResults = await getAISuggestions(todayExercises);
         document.getElementById('aiLoading')?.remove();
         if (aiResults && Array.isArray(aiResults)) {
             const aiMap = {};
             aiResults.forEach(r => { aiMap[r.id] = r; });
             const merged = {};
             todayExercises.forEach(ex => { merged[ex.id] = aiMap[ex.id] ? { ...aiMap[ex.id], source: 'ai' } : rulesSuggestions[ex.id]; });
-            window.renderExerciseList(todayExercises, merged);
-            window.updateWorkoutProgress(todayExercises);
+            renderExerciseList(todayExercises, merged);
+            updateWorkoutProgress(todayExercises);
         }
     }
-};
+}
 
-window.renderExerciseList = function(exercises, suggestions) {
+function renderExerciseList(exercises, suggestions) {
     let html = '';
     exercises.forEach((ex, idx) => {
         const sugg = suggestions[ex.id];
@@ -980,25 +733,25 @@ window.renderExerciseList = function(exercises, suggestions) {
                 '<div class="last-time">' + lastText + '</div>' +
                 (sugg.reasoning ? '<div class="ai-reasoning">💡 ' + sugg.reasoning + '</div>' : '') +
                 '<div class="exercise-actions">' +
-                    '<button class="btn btn-secondary" onclick="startLog(' + ex.id + ', ' + (sugg.sets || 0) + ', ' + (sugg.reps || 0) + ', ' + (sugg.weight || 0) + ', ' + (sugg.time || 0) + ')">Log Sets</button>' +
-                    '<button class="btn btn-ghost" onclick="showSwap(' + ex.id + ')">Swap</button>' +
+                    '<button class="btn btn-secondary" onclick="event.stopPropagation(); startLog(' + ex.id + ', ' + (sugg.sets || 0) + ', ' + (sugg.reps || 0) + ', ' + (sugg.weight || 0) + ', ' + (sugg.time || 0) + ')">Log Sets</button>' +
+                    '<button class="btn btn-ghost" onclick="event.stopPropagation(); showSwap(' + ex.id + ')">Swap</button>' +
                 '</div>' +
                 '<div id="swap-' + ex.id + '"></div><div id="logSession-' + ex.id + '"></div>' +
             '</div></div></div>';
     });
     document.getElementById('todayExercises').innerHTML = html;
-};
+}
 
-window.toggleExpand = function(id) {
+function toggleExpand(id) {
     expandedExerciseId = expandedExerciseId === id ? null : id;
     document.querySelectorAll('.exercise-card').forEach(c => {
         const cId = parseInt(c.id.replace('exCard-', ''));
         c.classList.toggle('expanded', cId === expandedExerciseId);
     });
     if (expandedExerciseId) setTimeout(() => document.getElementById('exCard-' + expandedExerciseId)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-};
+}
 
-window.showSwap = function(exerciseId) {
+function showSwap(exerciseId) {
     const swapDiv = document.getElementById('swap-' + exerciseId);
     if (swapDiv.innerHTML) { swapDiv.innerHTML = ''; return; }
     const altIds = ALTERNATIVES[exerciseId] || [];
@@ -1009,17 +762,17 @@ window.showSwap = function(exerciseId) {
         if (alt) html += '<div class="swap-option" onclick="doSwap(' + exerciseId + ', ' + altId + ')"><div>' + alt.name + '</div><div style="color:#00e676;font-size:12px;font-weight:600;">Pick →</div></div>';
     });
     swapDiv.innerHTML = html + '</div>';
-};
+}
 
-window.doSwap = function(oldId, newId) { saveFirebaseData(); window.displayTodayWorkout(); };
+function doSwap(oldId, newId) { saveFirebaseData(); displayTodayWorkout(); }
 
-window.adjustWeight = function(exerciseId, setIdx, delta) {
+function adjustWeight(exerciseId, setIdx, delta) {
     const input = document.getElementById('setW-' + exerciseId + '-' + setIdx);
     input.value = Math.max(0, (parseFloat(input.value) || 0) + delta);
     if (navigator.vibrate) navigator.vibrate(10);
-};
+}
 
-window.startLog = function(exerciseId, suggSets, suggReps, suggWeight, suggTime) {
+function startLog(exerciseId, suggSets, suggReps, suggWeight, suggTime) {
     const exercise = data.exercises.find(e => e.id == exerciseId);
     const isCardioEx = isCardio(exercise);
     const logDiv = document.getElementById('logSession-' + exerciseId);
@@ -1037,9 +790,9 @@ window.startLog = function(exerciseId, suggSets, suggReps, suggWeight, suggTime)
         html += '<button class="btn btn-ghost" style="margin-top:10px;width:100%;" onclick="addSet(' + exerciseId + ')">+ Add Set</button>';
     }
     logDiv.innerHTML = html + '</div>';
-};
+}
 
-window.completeSet = function(exerciseId, setIdx) {
+function completeSet(exerciseId, setIdx) {
     const weight = parseFloat(document.getElementById('setW-' + exerciseId + '-' + setIdx).value);
     const reps = parseInt(document.getElementById('setR-' + exerciseId + '-' + setIdx).value);
     const rirVal = document.getElementById('setRIR-' + exerciseId + '-' + setIdx).value;
@@ -1050,12 +803,12 @@ window.completeSet = function(exerciseId, setIdx) {
     const row = document.getElementById('setRow-' + exerciseId + '-' + setIdx);
     row.classList.add('complete');
     row.querySelector('.set-done-btn').classList.add('done');
-    window.saveIndividualSet(exerciseId, setIdx);
-    if (activeLogSession.setData.every(s => s.done)) window.finishExercise(exerciseId);
-    else if (data.settings.restEnabled) window.startRestTimer(data.settings.restTime);
-};
+    saveIndividualSet(exerciseId, setIdx);
+    if (activeLogSession.setData.every(s => s.done)) finishExercise(exerciseId);
+    else if (data.settings.restEnabled) startRestTimer(data.settings.restTime);
+}
 
-window.saveIndividualSet = function(exerciseId, setIdx) {
+function saveIndividualSet(exerciseId, setIdx) {
     const exercise = data.exercises.find(e => e.id == exerciseId);
     const setInfo = activeLogSession.setData[setIdx];
     const all = data.workouts.filter(w => w.exerciseId == exerciseId && !w.isCardio && w.weight);
@@ -1066,34 +819,34 @@ window.saveIndividualSet = function(exerciseId, setIdx) {
     exercise.lastWeight = setInfo.weight;
     saveFirebaseData();
     lastLoggedSetId = workout.id;
-    window.showUndoToast('Set ' + (setIdx + 1) + ' logged');
-    if (isPR) window.triggerPR();
-};
+    showUndoToast('Set ' + (setIdx + 1) + ' logged');
+    if (isPR) triggerPR();
+}
 
-window.showUndoToast = function(text) {
+function showUndoToast(text) {
     const toast = document.getElementById('undoToast');
     document.getElementById('undoText').textContent = text;
     toast.classList.add('active');
     clearTimeout(window.undoTimer);
     window.undoTimer = setTimeout(() => { toast.classList.remove('active'); lastLoggedSetId = null; }, 5000);
-};
+}
 
-window.undoLastSet = function() {
+function undoLastSet() {
     if (!lastLoggedSetId) return;
     data.workouts = data.workouts.filter(w => w.id !== lastLoggedSetId);
     saveFirebaseData();
     lastLoggedSetId = null;
     document.getElementById('undoToast').classList.remove('active');
-    window.displayTodayWorkout();
-    window.updateTopStats();
-};
+    displayTodayWorkout();
+    updateTopStats();
+}
 
-window.finishExercise = function(exerciseId) {
+function finishExercise(exerciseId) {
     const card = document.getElementById('exCard-' + exerciseId);
     if (card) card.classList.add('done');
-    window.stopRestTimer();
-    window.updateTopStats();
-    window.updateWorkoutProgress(currentExerciseList);
+    stopRestTimer();
+    updateTopStats();
+    updateWorkoutProgress(currentExerciseList);
     setTimeout(() => {
         const next = currentExerciseList.find(ex => { const c = document.getElementById('exCard-' + ex.id); return c && !c.classList.contains('done'); });
         if (next) {
@@ -1106,9 +859,9 @@ window.finishExercise = function(exerciseId) {
         }
     }, 400);
     activeLogSession = null;
-};
+}
 
-window.finishCardio = function(exerciseId) {
+function finishCardio(exerciseId) {
     const time = parseInt(document.getElementById('setTime').value);
     if (!time) return;
     const exercise = data.exercises.find(e => e.id == exerciseId);
@@ -1117,13 +870,13 @@ window.finishCardio = function(exerciseId) {
     exercise.lastTime = time;
     saveFirebaseData();
     lastLoggedSetId = workout.id;
-    window.showUndoToast('Cardio logged');
+    showUndoToast('Cardio logged');
     document.getElementById('exCard-' + exerciseId)?.classList.add('done');
-    window.updateTopStats();
-    window.updateWorkoutProgress(currentExerciseList);
-};
+    updateTopStats();
+    updateWorkoutProgress(currentExerciseList);
+}
 
-window.addSet = function(exerciseId) {
+function addSet(exerciseId) {
     const newIdx = activeLogSession.setData.length;
     activeLogSession.setData.push({ weight: activeLogSession.targetWeight, reps: activeLogSession.targetReps, done: false });
     const addBtn = document.querySelector('#logSession-' + exerciseId + ' .btn-ghost');
@@ -1132,32 +885,32 @@ window.addSet = function(exerciseId) {
     row.id = 'setRow-' + exerciseId + '-' + newIdx;
     row.innerHTML = '<div class="set-num">' + (newIdx + 1) + '</div><div class="weight-group"><button class="step-btn" onclick="adjustWeight(' + exerciseId + ',' + newIdx + ',-5)">−</button><input type="number" class="set-input" id="setW-' + exerciseId + '-' + newIdx + '" value="' + activeLogSession.targetWeight + '" step="5"><button class="step-btn" onclick="adjustWeight(' + exerciseId + ',' + newIdx + ',5)">+</button></div><input type="number" class="set-input" id="setR-' + exerciseId + '-' + newIdx + '" value="' + activeLogSession.targetReps + '"><select class="set-input" id="setRIR-' + exerciseId + '-' + newIdx + '" style="padding:4px;"><option value="">-</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><button class="set-done-btn" onclick="completeSet(' + exerciseId + ',' + newIdx + ')">✓</button>';
     addBtn.parentNode.insertBefore(row, addBtn);
-};
+}
 
-window.startRestTimer = function(seconds) {
-    window.stopRestTimer();
+function startRestTimer(seconds) {
+    stopRestTimer();
     const timer = document.getElementById('restTimer');
     const timeEl = document.getElementById('restTimerTime');
     let remaining = seconds;
     timer.classList.add('active');
     const upd = () => { timeEl.textContent = Math.floor(remaining / 60) + ':' + (remaining % 60 < 10 ? '0' : '') + (remaining % 60); };
     upd();
-    restTimerInterval = setInterval(() => { remaining--; upd(); if (remaining <= 0) { window.stopRestTimer(); if (navigator.vibrate) navigator.vibrate([200, 100, 200]); } }, 1000);
-};
+    restTimerInterval = setInterval(() => { remaining--; upd(); if (remaining <= 0) { stopRestTimer(); if (navigator.vibrate) navigator.vibrate([200, 100, 200]); } }, 1000);
+}
 
-window.stopRestTimer = function() {
+function stopRestTimer() {
     if (restTimerInterval) clearInterval(restTimerInterval);
     document.getElementById('restTimer').classList.remove('active');
-};
+}
 
-window.triggerPR = function() {
+function triggerPR() {
     document.getElementById('prOverlay').classList.add('show');
     if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 200]);
-    for (let i = 0; i < 20; i++) setTimeout(() => window.shootConfetti(), i * 40);
+    for (let i = 0; i < 20; i++) setTimeout(() => shootConfetti(), i * 40);
     setTimeout(() => document.getElementById('prOverlay').classList.remove('show'), 1500);
-};
+}
 
-window.shootConfetti = function() {
+function shootConfetti() {
     const piece = document.createElement('div');
     piece.className = 'confetti-piece';
     piece.style.background = ['#00e676', '#00cc66', '#fff'][Math.floor(Math.random() * 3)];
@@ -1169,9 +922,9 @@ window.shootConfetti = function() {
     const dur = 1500 + Math.random() * 1000;
     piece.animate([{ transform: 'translate(0,0) rotate(0deg)', opacity: 1 }, { transform: 'translate(' + Math.cos(angle) * vel + 'px,' + (Math.sin(angle) * vel + 500) + 'px) rotate(720deg)', opacity: 0 }], { duration: dur });
     setTimeout(() => piece.remove(), dur);
-};
+}
 
-window.displaySchedule = function() {
+function displaySchedule() {
     const display = document.getElementById('scheduleDisplay');
     display.innerHTML = '';
     DAYS.forEach(day => {
@@ -1181,7 +934,7 @@ window.displaySchedule = function() {
         const header = document.createElement('div');
         header.className = 'day-card-header';
         header.innerHTML = '<div class="day-card-title">' + day + '</div><div class="day-card-toggle">▼</div>';
-        header.addEventListener('click', () => { expandedDay = expandedDay === day ? null : day; window.displaySchedule(); });
+        header.addEventListener('click', () => { expandedDay = expandedDay === day ? null : day; displaySchedule(); });
         card.appendChild(header);
         const musclesDiv = document.createElement('div');
         if (dayMuscles.length > 0) {
@@ -1197,32 +950,32 @@ window.displaySchedule = function() {
             const btn = document.createElement('button');
             btn.className = 'muscle-btn' + (dayMuscles.includes(muscle) ? ' selected' : '');
             btn.textContent = muscle;
-            btn.addEventListener('click', e => { e.stopPropagation(); window.toggleMuscleForDay(day, muscle); });
+            btn.addEventListener('click', e => { e.stopPropagation(); toggleMuscleForDay(day, muscle); });
             grid.appendChild(btn);
         });
         picker.appendChild(grid);
         card.appendChild(picker);
         display.appendChild(card);
     });
-};
+}
 
-window.toggleMuscleForDay = function(day, muscle) {
+function toggleMuscleForDay(day, muscle) {
     const exists = data.schedule.find(s => s.day === day && s.muscle === muscle);
     if (exists) data.schedule = data.schedule.filter(s => !(s.day === day && s.muscle === muscle));
     else data.schedule.push({ day, muscle });
     saveFirebaseData();
-    window.displaySchedule();
-};
+    displaySchedule();
+}
 
-window.displayExercises = function() {
+function displayExercises() {
     document.getElementById('exerciseTitle').textContent = 'Your Lifts · ' + data.exercises.length;
     document.getElementById('exerciseList').innerHTML = data.exercises.map(ex => {
         const statText = isCardio(ex) ? 'Last: ' + (ex.lastTime || 30) + ' min' : 'Last: ' + (ex.lastWeight || 0) + ' lbs';
         return '<div class="exercise-card"><div class="exercise-card-compact"><div class="exercise-card-compact-info"><div class="exercise-card-compact-name">' + ex.name + '</div><div class="exercise-card-compact-meta" style="color:#6b7280;">' + ex.type + ' · ' + ex.muscle + ' · ' + statText + '</div></div></div></div>';
     }).join('');
-};
+}
 
-window.setupProgressTab = function() {
+function setupProgressTab() {
     let totalVolume = 0;
     data.workouts.forEach(w => { if (!w.isCardio && w.weight && w.reps) totalVolume += w.weight * w.reps * (w.sets || 1); });
     const weekStart = new Date(); weekStart.setDate(weekStart.getDate() - 7);
@@ -1232,11 +985,11 @@ window.setupProgressTab = function() {
     const exWithHist = data.exercises.filter(ex => data.workouts.some(w => w.exerciseId == ex.id));
     if (exWithHist.length === 0) { document.getElementById('progressCharts').innerHTML = '<div class="empty-state"><div class="empty-state-text">Start logging to see progress</div></div>'; return; }
     select.innerHTML = exWithHist.map(ex => '<option value="' + ex.id + '">' + ex.name + '</option>').join('');
-    select.onchange = function() { window.renderProgressChart(parseInt(this.value)); };
-    window.renderProgressChart(exWithHist[0].id);
-};
+    select.onchange = function() { renderProgressChart(parseInt(this.value)); };
+    renderProgressChart(exWithHist[0].id);
+}
 
-window.renderProgressChart = function(exerciseId) {
+function renderProgressChart(exerciseId) {
     const exercise = data.exercises.find(e => e.id == exerciseId);
     const history = data.workouts.filter(w => w.exerciseId == exerciseId && w.loggedAt).sort((a, b) => new Date(a.loggedAt) - new Date(b.loggedAt));
     if (history.length === 0) return;
@@ -1250,18 +1003,18 @@ window.renderProgressChart = function(exerciseId) {
         data: { labels: history.map(h => new Date(h.loggedAt).toLocaleDateString()), datasets: [{ label: isCardioEx ? 'Time' : 'Weight', data: values, borderColor: '#00e676', backgroundColor: 'rgba(0,230,118,0.1)', borderWidth: 2, tension: 0.3, fill: true, pointRadius: 2, pointBackgroundColor: '#00e676' }] },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 6, color: '#6b7280' }, grid: { color: '#1f2937' } }, y: { ticks: { color: '#6b7280' }, grid: { color: '#1f2937' } } } }
     });
-};
+}
 
-window.exportData = function() {
+function exportData() {
     const blob = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), version: DATA_VERSION, data }, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url; a.download = 'workout-backup-' + new Date().toISOString().split('T')[0] + '.json';
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     URL.revokeObjectURL(url);
-};
+}
 
-window.importData = function(file) {
+function importData(file) {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = e => {
@@ -1277,17 +1030,16 @@ window.importData = function(file) {
         } catch (e) { alert('Could not read backup'); }
     };
     reader.readAsText(file);
-};
+}
 
-window.resetData = function() {
+function resetData() {
     if (!confirm('Reset all data?')) return;
     data = JSON.parse(JSON.stringify(INITIAL_DATA));
     saveFirebaseData();
     location.reload();
-};
+}
 
-// CHAT FUNCTIONS
-window.renderChatHistory = function() {
+function renderChatHistory() {
     const messagesDiv = document.getElementById('chatMessages');
     messagesDiv.innerHTML = '<div class="chat-message assistant"><div class="chat-avatar">🥋</div><div class="chat-bubble">Hey! I\'m your AI coach. I can see your workout history and what you\'re doing today. Ask me anything or tap a suggestion below.</div></div>';
     
@@ -1306,14 +1058,14 @@ window.renderChatHistory = function() {
     });
     
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
-};
+}
 
-window.quickPrompt = function(text) {
+function quickPrompt(text) {
     document.getElementById('chatInput').value = text;
-    window.sendMessage();
-};
+    sendMessage();
+}
 
-window.sendMessage = async function() {
+async function sendMessage() {
     const input = document.getElementById('chatInput');
     const message = input.value.trim();
     if (!message) return;
@@ -1326,7 +1078,7 @@ window.sendMessage = async function() {
     input.style.height = 'auto';
     
     data.chatHistory.push({ role: 'user', content: message });
-    window.renderChatHistory();
+    renderChatHistory();
     
     const sendBtn = document.getElementById('chatSendBtn');
     sendBtn.disabled = true;
@@ -1349,7 +1101,7 @@ window.sendMessage = async function() {
     
     const context = `You are a personal trainer AI coach. Be brief, friendly, motivating.
 
-USER: Goal=${data.settings.goal}, Experience=${data.settings.experience}, Streak=${window.calculateStreak()} days
+USER: Goal=${data.settings.goal}, Experience=${data.settings.experience}, Streak=${calculateStreak()} days
 
 TODAY: ${today}, Muscles=${todaySchedule.map(s => s.muscle).join(', ') || 'rest'}, Planned=${currentExerciseList.map(e => e.name).join(', ') || 'none'}
 
@@ -1373,7 +1125,7 @@ WORKOUT_CHANGES: {"action": "shorten|add|adjust", "changes": [{"exerciseId": 123
         if (!response.ok) {
             const errorText = await response.text();
             data.chatHistory.push({ role: 'assistant', content: 'API Error: ' + errorText });
-            window.renderChatHistory();
+            renderChatHistory();
             sendBtn.disabled = false;
             return;
         }
@@ -1408,37 +1160,35 @@ WORKOUT_CHANGES: {"action": "shorten|add|adjust", "changes": [{"exerciseId": 123
         }
         
         saveFirebaseData();
-        window.renderChatHistory();
+        renderChatHistory();
         sendBtn.disabled = false;
     } catch (error) {
         console.error('Chat error:', error);
         document.getElementById('loadingMsg')?.remove();
         data.chatHistory.push({ role: 'assistant', content: 'Error: ' + error.message });
-        window.renderChatHistory();
+        renderChatHistory();
         sendBtn.disabled = false;
     }
-};
+}
 
-window.applyWorkoutChanges = function() {
+function applyWorkoutChanges() {
     if (!pendingWorkoutChanges) return;
     alert('Changes applied! Check the Today tab.');
     pendingWorkoutChanges = null;
     data.chatHistory[data.chatHistory.length - 1].confirmation = '';
     saveFirebaseData();
-    window.renderChatHistory();
-    window.displayTodayWorkout();
-};
+    renderChatHistory();
+    displayTodayWorkout();
+}
 
-window.cancelWorkoutChanges = function() {
+function cancelWorkoutChanges() {
     pendingWorkoutChanges = null;
     data.chatHistory[data.chatHistory.length - 1].confirmation = '';
     saveFirebaseData();
-    window.renderChatHistory();
-};
+    renderChatHistory();
+}
 
-// Initialize
-initFirebaseAuth();
-document.getElementById('googleSignInBtn').addEventListener('click', window.doGoogleSignIn);
+initFirebase();
 </script>
 </body>
 </html>
